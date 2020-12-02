@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var topBarView: UIView!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,6 +20,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.estimatedRowHeight = 120
         tableView.tableFooterView = UIView()
+        self.topBarView.backgroundColor = UIColor(patternImage: UIImage(named: "big_header.png")!)
+        self.topBarView.roundCorners(corners:[.bottomLeft, .bottomRight], radius: 70.0)
+
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -40,3 +44,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 }
 
+extension UIView {
+   func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
+    }
+}

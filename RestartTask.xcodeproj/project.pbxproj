@@ -15,6 +15,7 @@
 		A898FF2325777A580069265A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A898FF2125777A580069265A /* LaunchScreen.storyboard */; };
 		A898FF2B257784B90069265A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898FF2A257784B90069265A /* TableViewCell.swift */; };
 		A898FF2D2577862E0069265A /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898FF2C2577862E0069265A /* CollectionViewCell.swift */; };
+		A898FF2F2577A42B0069265A /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898FF2E2577A42B0069265A /* DesignableUITextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A898FF2425777A580069265A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A898FF2A257784B90069265A /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		A898FF2C2577862E0069265A /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		A898FF2E2577A42B0069265A /* DesignableUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				A898FF2425777A580069265A /* Info.plist */,
 				A898FF2A257784B90069265A /* TableViewCell.swift */,
 				A898FF2C2577862E0069265A /* CollectionViewCell.swift */,
+				A898FF2E2577A42B0069265A /* DesignableUITextField.swift */,
 			);
 			path = RestartTask;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				A898FF2D2577862E0069265A /* CollectionViewCell.swift in Sources */,
 				A898FF1B25777A4E0069265A /* ViewController.swift in Sources */,
 				A898FF2B257784B90069265A /* TableViewCell.swift in Sources */,
+				A898FF2F2577A42B0069265A /* DesignableUITextField.swift in Sources */,
 				A898FF1725777A4E0069265A /* AppDelegate.swift in Sources */,
 				A898FF1925777A4E0069265A /* SceneDelegate.swift in Sources */,
 			);
