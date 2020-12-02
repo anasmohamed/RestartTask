@@ -31,7 +31,7 @@ class CollectionViewCell: UICollectionViewCell {
     {
         self.name.text = name
         self.type.text = type
-        self.image.sd_setImage(with:URL(string: image) , placeholderImage: UIImage(named: ))
+        self.image.sd_setImage(with:URL(string: image) , placeholderImage: UIImage(named: "no_image_avaliable"))
     }
     
 }

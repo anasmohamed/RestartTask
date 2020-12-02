@@ -14,11 +14,13 @@ class ResponsePresenter {
     
     
     private var attractionsList: [Attraction]
-    
+    private var hotspotList: [Hotspot]
+
     init(view: AttractionView) {
         self.view = view
         responseAPIServerClient = AppServerClient()
         attractionsList = [Attraction]()
+        hotspotList = [Hotspot]()
         
     }
     
@@ -29,14 +31,15 @@ class ResponsePresenter {
     }
     
     func getOffers() {
-        responseAPIServerClient.fetchData { [unowned self] (success,attractionsList, error)  in
+        responseAPIServerClient.fetchData { [unowned self] (success,attractionsList,hotspotList, error)  in
             
             if let error = error {
                 self.view?.showError(error: error.localizedDescription)
             } else {
                 if attractionsList != nil{
                     if attractionsList!.count != 0{
-                        self.attractionsList += attractionsList!
+                        self.attractionsList = attractionsList!
+                        self.hotspotList = hotspotList!
                         self.view?.getResponseSuccess()
                     }}
                 
@@ -47,17 +50,27 @@ class ResponsePresenter {
         return attractionsList.count
     }
     
-    
+    func getHotspotsCount() -> Int {
+        return hotspotList.count
+    }
     
     func configure(cell: TableViewCellView, for index: Int) {
         let attractions = attractionsList
+        let hotspots = hotspotList
 
 //        let price = attraction.name
 //        let totalPrice = attraction.attractionId
 //        let quntity = attraction.quantity
+        switch index {
+        case 0:
+            cell.displayAttractions(attraction: attractions,index: 0)
+        case 1:
+            cell.displayHotspot(hotspot: hotspots,index: 1)
 
+        default:break
+            
+        }
         
-        cell.displayAttractions(attraction: attractions)
 //        cell.displayProductTotalPrice(productTotalPrice:totalPrice )
 //        cell.displayProductQuntity(quntity: quntity)
         

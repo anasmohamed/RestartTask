@@ -15,6 +15,8 @@ class TableViewCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewDa
     
     static let identifier = "TableViewCell"
     var attractions : [Attraction]?
+    var hotspots : [Hotspot]?
+    var index : Int?
     static func nib() ->UINib{
         return UINib(nibName: "TableViewCell", bundle: nil)
     }
@@ -27,33 +29,51 @@ class TableViewCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewDa
         collectionView.dataSource = self
     }
     
-  
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return attractions!.count
+        
+            return  4
+      
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
-        if attractions?.count != 0{
-            cell.configure(with:attractions![indexPath.item].name!, type: "anas", image: "")}
+        switch  index{
+        
+        case 0:
+            if attractions?.count != 0{
+                cell.configure(with:attractions![indexPath.item].name!, type: attractions![indexPath.item].type!, image: attractions![indexPath.item].photo!)}
+        case 1:
+            if hotspots?.count != 0{
+                cell.configure(with:hotspots![indexPath.item].name!, type: hotspots![indexPath.item].type!, image: hotspots![indexPath.item].profileImage!)}
+        default: break
+            
+        }
+        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 260, height: 260)
     }
     
-    func displayAttractions(attraction: [Attraction]) {
+    func displayAttractions(attraction: [Attraction],index :Int) {
         self.attractions = attraction
+        self.index = index
         collectionView.reloadData()
     }
     
-    func displayHotspot(hotspot: [Hotspot]) {
-        
+    func displayHotspot(hotspot: [Hotspot],index :Int) {
+        self.hotspots = hotspot
+        self.index = index
+
+        collectionView.reloadData()
+
     }
     
     func displayEvents(event: [Events]) {

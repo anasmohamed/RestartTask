@@ -8,8 +8,8 @@
 
 import Foundation
 protocol TableViewCellView {
-    func displayAttractions(attraction: [Attraction])
-    func displayHotspot(hotspot: [Hotspot])
+    func displayAttractions(attraction: [Attraction],index:Int)
+    func displayHotspot(hotspot: [Hotspot],index:Int)
     func displayEvents(event :[Events])
 
 }
