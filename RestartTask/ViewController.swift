@@ -18,17 +18,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        tableView.estimatedRowHeight = 120
-        tableView.tableFooterView = UIView()
-        self.topBarView.backgroundColor = UIColor(patternImage: UIImage(named: "big_header.png")!)
-        self.topBarView.roundCorners(corners:[.bottomLeft, .bottomRight], radius: 70.0)
-
+//        tableView.estimatedRowHeight = 120
+//        tableView.tableFooterView = UIView()
+//  
+        tableView.register(TableViewCell.nib(), forCellReuseIdentifier: TableViewCell.identifier)
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Section Title \(section)"
-    }
- 
+   
     func numberOfSections(in tableView: UITableView) -> Int {
         return 5
     }
@@ -36,19 +32,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath) as? TableViewCell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as? TableViewCell
         {
             return cell
         }
         return UITableViewCell()
     }
-}
-
-extension UIView {
-   func roundCorners(corners: UIRectCorner, radius: CGFloat) {
-        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        layer.mask = mask
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 250.0
     }
 }
+
+
+
