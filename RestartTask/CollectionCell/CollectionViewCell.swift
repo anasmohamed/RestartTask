@@ -7,8 +7,10 @@
 //
 
 import UIKit
-
+import SDWebImage
 class CollectionViewCell: UICollectionViewCell {
+   
+    
     
     @IBOutlet var name : UILabel!
     @IBOutlet var type : UILabel!
@@ -29,6 +31,7 @@ class CollectionViewCell: UICollectionViewCell {
     {
         self.name.text = name
         self.type.text = type
-        self.image.image = UIImage(named: image)
+        self.image.sd_setImage(with:URL(string: image) , placeholderImage: UIImage(named: ))
     }
+    
 }
