@@ -1,6 +1,5 @@
 PODS:
   - Alamofire (5.2.1)
-  - CircleBar (0.8.2)
   - SDWebImage (5.9.3):
     - SDWebImage/Core (= 5.9.3)
   - SDWebImage/Core (5.9.3)
@@ -8,23 +7,20 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
-  - CircleBar
   - SDWebImage (~> 5.0)
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - CircleBar
     - SDWebImage
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
-  CircleBar: 8e17d2090e6e319b518010535a3145fb8fd68c22
   SDWebImage: a31ee8e90a97303529e03fb0c333eae0eacb88e9
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 158352ca5a53f6a69073b7b5cfd4de6dc1c8ce22
+PODFILE CHECKSUM: c1c911a3a9218f0aa1243bb66e5c764781890511
 
 COCOAPODS: 1.9.3
