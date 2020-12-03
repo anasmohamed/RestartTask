@@ -19,11 +19,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-//        tableView.estimatedRowHeight = 120
-//        tableView.tableFooterView = UIView()
-//
+   
+
         presenter = ResponsePresenter(view : self)
                presenter.getOffers()
         tableView.register(TableViewCell.nib(), forCellReuseIdentifier: TableViewCell.identifier)
@@ -31,7 +28,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         filterBtn.roundedButton()
         filterBarView.layer.cornerRadius = 10
-       
+
 
     }
     

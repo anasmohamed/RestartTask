@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ngu-1y-73E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IYZ-Rr-OYb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5G4-JZ-XxR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5G4-JZ-XxR">
                                 <rect key="frame" x="0.0" y="194" width="414" height="619"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
@@ -125,12 +125,12 @@
                                     <constraint firstItem="z5H-NB-FVs" firstAttribute="top" secondItem="MNr-qj-SVL" secondAttribute="bottom" id="xFk-UM-Kg3"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ktt-az-tyr">
-                                <rect key="frame" x="172" y="763" width="70" height="70"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvb-86-Hyi">
+                                <rect key="frame" x="172" y="758" width="70" height="70"/>
                                 <color key="backgroundColor" red="0.46967965360000002" green="0.67036288980000003" blue="0.3920723498" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="a1d-FA-yOG"/>
-                                    <constraint firstAttribute="width" secondItem="Ktt-az-tyr" secondAttribute="height" multiplier="1:1" id="bf6-qZ-YC5"/>
+                                    <constraint firstAttribute="width" constant="70" id="XEz-ku-UAX"/>
+                                    <constraint firstAttribute="width" secondItem="Pvb-86-Hyi" secondAttribute="height" multiplier="1:1" id="e8N-NT-THV"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -141,20 +141,20 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5G4-JZ-XxR" secondAttribute="bottom" id="23U-5u-wJj"/>
                             <constraint firstItem="IdQ-Ks-2lr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="BGk-RY-NgV"/>
-                            <constraint firstItem="Ktt-az-tyr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="DdU-ij-4Mi"/>
                             <constraint firstItem="xUo-fM-llt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FcV-ZJ-5HT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5G4-JZ-XxR" secondAttribute="bottom" id="HtA-JJ-Glr"/>
                             <constraint firstItem="5G4-JZ-XxR" firstAttribute="top" secondItem="xUo-fM-llt" secondAttribute="bottom" id="JVP-73-yxs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Pvb-86-Hyi" secondAttribute="bottom" constant="-15" id="U2e-UP-u1q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xUo-fM-llt" secondAttribute="trailing" id="UQ8-F8-ADi"/>
                             <constraint firstItem="5G4-JZ-XxR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ejf-Gh-zWS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5G4-JZ-XxR" secondAttribute="trailing" id="fFb-ZE-E2I"/>
                             <constraint firstItem="xUo-fM-llt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hmf-Rr-uwD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ktt-az-tyr" secondAttribute="bottom" constant="-20" id="uYw-Zt-oZd"/>
+                            <constraint firstItem="Pvb-86-Hyi" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="z4h-iV-hAp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="rqy-J3-8YW"/>
+                    <tabBarItem key="tabBarItem" title="" id="bja-6K-NlR"/>
                     <connections>
                         <outlet property="filterBarView" destination="IdQ-Ks-2lr" id="yAS-oY-vLs"/>
                         <outlet property="filterBtn" destination="gfK-H9-2BV" id="7DK-uj-E2h"/>
@@ -164,26 +164,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="95.758928571428569"/>
+            <point key="canvasLocation" x="2862.3188405797105" y="95.758928571428569"/>
         </scene>
-        <!--My Tab Bar Controller-->
-        <scene sceneID="GsZ-A8-YWS">
+        <!--Tab Bar Controller-->
+        <scene sceneID="OnI-R7-hOv">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ngu-1y-73E" customClass="MyTabBarController" customModule="RestartTask" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="IYZ-Rr-OYb" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F3j-rx-OaV" customClass="CustomizedTabBar" customModule="RestartTask" customModuleProvider="target">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kPa-xc-35Y" customClass="CustomizedTabBar" customModule="RestartTask" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.46967965360000002" green="0.67036288980000003" blue="0.3920723498" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="d3V-vW-Gx5"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="f47-E5-o8b"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UiL-ph-1h0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Mq-DQ-S0g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="95.758928571428569"/>
+            <point key="canvasLocation" x="1952.1739130434785" y="95.758928571428569"/>
         </scene>
     </scenes>
     <resources>
