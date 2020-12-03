@@ -28,6 +28,8 @@
 		A898FF382577C2CA0069265A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898FF362577C2CA0069265A /* TableViewCell.swift */; };
 		A898FF392577C2CA0069265A /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A898FF372577C2CA0069265A /* TableViewCell.xib */; };
 		A898FF3D2577D7740069265A /* Attraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898FF3C2577D7740069265A /* Attraction.swift */; };
+		A8B762B22578F1DA00057F5D /* CustomizedTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B762B12578F1DA00057F5D /* CustomizedTabBar.swift */; };
+		A8B762B42578F65600057F5D /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B762B32578F65500057F5D /* MyTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		A898FF362577C2CA0069265A /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		A898FF372577C2CA0069265A /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		A898FF3C2577D7740069265A /* Attraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attraction.swift; sourceTree = "<group>"; };
+		A8B762B12578F1DA00057F5D /* CustomizedTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedTabBar.swift; sourceTree = "<group>"; };
+		A8B762B32578F65500057F5D /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 				A898FF1F25777A580069265A /* Assets.xcassets */,
 				A898FF2125777A580069265A /* LaunchScreen.storyboard */,
 				A898FF2425777A580069265A /* Info.plist */,
+				A8B762B32578F65500057F5D /* MyTabBarController.swift */,
 			);
 			path = RestartTask;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 			children = (
 				A898FF2E2577A42B0069265A /* DesignableUITextField.swift */,
 				A809B031257830E900844611 /* ViewController+ResponseViewDelegate.swift */,
+				A8B762B12578F1DA00057F5D /* CustomizedTabBar.swift */,
 			);
 			path = "Utils+Extension";
 			sourceTree = "<group>";
@@ -310,6 +316,8 @@
 				A82FEBAD2577F40F00440F12 /* Event.swift in Sources */,
 				A82FEBAB2577F40100440F12 /* Hotspot.swift in Sources */,
 				A898FF1B25777A4E0069265A /* ViewController.swift in Sources */,
+				A8B762B42578F65600057F5D /* MyTabBarController.swift in Sources */,
+				A8B762B22578F1DA00057F5D /* CustomizedTabBar.swift in Sources */,
 				A898FF342577C29D0069265A /* CollectionViewCell.swift in Sources */,
 				A809B034257838FD00844611 /* TableViewCellView.swift in Sources */,
 				A898FF2F2577A42B0069265A /* DesignableUITextField.swift in Sources */,
