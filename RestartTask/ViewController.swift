@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var filterBarView: UIView!
+    @IBOutlet weak var filterBtn: UIButton!
     @IBOutlet weak var topBarView: UIView!
     
     @IBOutlet weak var tableView: UITableView!
@@ -27,6 +29,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.register(TableViewCell.nib(), forCellReuseIdentifier: TableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
+        filterBtn.roundedButton()
+        filterBarView.layer.cornerRadius = 10
        
 
     }
@@ -52,3 +56,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 
 
+extension UIButton{
+    func roundedButton(){
+        let maskPath1 = UIBezierPath(roundedRect: bounds,
+            byRoundingCorners: [.bottomRight , .topRight],
+            cornerRadii: CGSize(width: 8, height: 8))
+        let maskLayer1 = CAShapeLayer()
+        maskLayer1.frame = bounds
+        maskLayer1.path = maskPath1.cgPath
+        layer.mask = maskLayer1
+    }
+}
