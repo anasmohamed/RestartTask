@@ -16,7 +16,7 @@ class AppServerClient {
     
     
     
-    func fetchData(completion: @escaping (Bool, [Attraction]?,[Hotspot]?, AFError?) -> ()) {
+    func fetchData(completion: @escaping (Bool, [Attraction]?,[Hotspot]?,[Event]?, AFError?) -> ()) {
         AF.request("http://bellman-bd.restart-technology.com/api/home")
             .responseJSON { response in
                 
@@ -57,9 +57,11 @@ class AppServerClient {
                     print(json)
                     var attractionsList = [Attraction]()
                     var hotspotList = [Hotspot]()
+                    var eventsList = [Event]()
 
                     let attractions = json["data"]["attractions"].arrayValue
                     let hotspots = json["data"]["hot_spots"].arrayValue
+                    let events = json["data"]["events"].arrayValue
 
                     
                     for attraction in attractions
@@ -72,12 +74,17 @@ class AppServerClient {
                         let data = Hotspot(withJSON: hotspot)
                         hotspotList.append(data!)
                     }
-                    completion(true,attractionsList,hotspotList,nil)
+                    for event in events
+                    {
+                        let data = Event(withJSON: event)
+                        eventsList.append(data!)
+                    }
+                    completion(true,attractionsList,hotspotList,eventsList,nil)
                     
                     
                 case .failure(let error):
                     
-                    completion(false,nil,nil,error)
+                    completion(false,nil,nil,nil,error)
                 }
         }
     }

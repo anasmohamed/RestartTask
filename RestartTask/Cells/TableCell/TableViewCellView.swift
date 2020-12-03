@@ -10,6 +10,6 @@ import Foundation
 protocol TableViewCellView {
     func displayAttractions(attraction: [Attraction],index:Int)
     func displayHotspot(hotspot: [Hotspot],index:Int)
-    func displayEvents(event :[Events])
+    func displayEvents(event :[Event],index:Int)
 
 }

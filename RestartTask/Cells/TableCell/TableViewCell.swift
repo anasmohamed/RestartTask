@@ -16,6 +16,7 @@ class TableViewCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewDa
     static let identifier = "TableViewCell"
     var attractions : [Attraction]?
     var hotspots : [Hotspot]?
+    var events : [Event]?
     var index : Int?
     static func nib() ->UINib{
         return UINib(nibName: "TableViewCell", bundle: nil)
@@ -37,9 +38,19 @@ class TableViewCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewDa
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-            return  4
+        switch index {
+        case 0:
+            return attractions?.count ?? 0
+        case 1:
+            return hotspots?.count ?? 0
+        case 2:
+            return events?.count ?? 0
+            
+        default:
+            break
+        }
       
-        
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -52,6 +63,10 @@ class TableViewCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewDa
         case 1:
             if hotspots?.count != 0{
                 cell.configure(with:hotspots![indexPath.item].name!, type: hotspots![indexPath.item].type!, image: hotspots![indexPath.item].profileImage!)}
+        case 2:
+            if events?.count != 0{
+                cell.configure(with:events![indexPath.item].name!, type: events![indexPath.item].type!, image: events![indexPath.item].profileImage!)}
+
         default: break
             
         }
@@ -76,8 +91,10 @@ class TableViewCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewDa
 
     }
     
-    func displayEvents(event: [Events]) {
-        
+    func displayEvents(event: [Event],index : Int) {
+        self.events = event
+        self.index = index
+        collectionView.reloadData()
     }
     
 }

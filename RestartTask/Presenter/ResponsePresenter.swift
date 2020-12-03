@@ -15,12 +15,14 @@ class ResponsePresenter {
     
     private var attractionsList: [Attraction]
     private var hotspotList: [Hotspot]
-
+    private var eventsList: [Event]
+    
     init(view: AttractionView) {
         self.view = view
         responseAPIServerClient = AppServerClient()
         attractionsList = [Attraction]()
         hotspotList = [Hotspot]()
+        eventsList = [Event]()
         
     }
     
@@ -31,17 +33,18 @@ class ResponsePresenter {
     }
     
     func getOffers() {
-        responseAPIServerClient.fetchData { [unowned self] (success,attractionsList,hotspotList, error)  in
+        responseAPIServerClient.fetchData { [unowned self] (success,attractionsList,hotspotList,eventsList, error)  in
             
             if let error = error {
                 self.view?.showError(error: error.localizedDescription)
             } else {
-                if attractionsList != nil{
+                
                     if attractionsList!.count != 0{
                         self.attractionsList = attractionsList!
                         self.hotspotList = hotspotList!
+                        self.eventsList = eventsList!
                         self.view?.getResponseSuccess()
-                    }}
+                    }
                 
             }
         }
@@ -53,26 +56,26 @@ class ResponsePresenter {
     func getHotspotsCount() -> Int {
         return hotspotList.count
     }
+    func getEventsCount() -> Int {
+        return eventsList.count
+    }
     
     func configure(cell: TableViewCellView, for index: Int) {
         let attractions = attractionsList
         let hotspots = hotspotList
-
-//        let price = attraction.name
-//        let totalPrice = attraction.attractionId
-//        let quntity = attraction.quantity
+        let events = eventsList
+       
+        
         switch index {
         case 0:
-            cell.displayAttractions(attraction: attractions,index: 0)
+            cell.displayAttractions(attraction: attractions,index: index)
         case 1:
-            cell.displayHotspot(hotspot: hotspots,index: 1)
-
+            cell.displayHotspot(hotspot: hotspots,index: index)
+        case 2:
+            cell.displayEvents(event: events,index: index)
         default:break
             
         }
-        
-//        cell.displayProductTotalPrice(productTotalPrice:totalPrice )
-//        cell.displayProductQuntity(quntity: quntity)
         
     }
     
